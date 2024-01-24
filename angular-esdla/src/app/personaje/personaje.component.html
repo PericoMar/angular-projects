@@ -1,0 +1,17 @@
+<!-- Bucles en html con Angular -->
+
+<div *ngFor="let per of personajes">
+  <p>{{per.nombre | uppercase}}</p> <!-- Uso de pipes -->
+  <button (click)="onSelect(per)">Selecciona el personaje</button>
+</div>
+
+
+
+<!-- Enlace de datos bidireccional -->
+<div *ngIf="personajeSel">
+  <div>
+    <label>Cambiar nombre a {{personajeSel.nombre}}:
+      <input [(ngModel)]="personajeSel.nombre" placeholder="name" />
+    </label>
+  </div>
+</div>
