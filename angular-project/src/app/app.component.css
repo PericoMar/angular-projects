@@ -1,0 +1,11 @@
+h1 {
+  color:red;
+}
+
+.contador{
+  background-color: aliceblue;
+  margin: 10px;
+  text-align: center;
+  border: 2cap;
+  width: 500px
+}
