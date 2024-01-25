@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "carrito-angular": {
+    "mystore": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/carrito-angular",
+            "outputPath": "dist/mystore",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "carrito-angular:build:production"
+              "buildTarget": "mystore:build:production"
             },
             "development": {
-              "buildTarget": "carrito-angular:build:development"
+              "buildTarget": "mystore:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "carrito-angular:build"
+            "buildTarget": "mystore:build"
           }
         },
         "test": {
