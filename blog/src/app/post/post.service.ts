@@ -22,7 +22,7 @@ export class PostService {
     })
   }
 
- // Constructor
+// Constructor
 
   constructor(private httpClient: HttpClient) { }
 
