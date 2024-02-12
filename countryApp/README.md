@@ -17,6 +17,7 @@ Este proyecto es una aplicación web desarrollada en Angular que permite a los u
     * [Bucle for](https://angular.io/api/core/for)
 * Uso de Servicios / Inyectables en Angular.
     * Función inject().
+* Configurar y gestionar rutas primarias y anidadas con Router y routerLink 
 
 
 # Angular, HttpClient y RxJS:

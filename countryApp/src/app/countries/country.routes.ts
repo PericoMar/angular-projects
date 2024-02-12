@@ -8,5 +8,5 @@ export const COUNTRY_ROUTES: Routes = [
   { path: 'by-capital', component: ByCapitalPageComponent },
   { path: 'by-country', component: ByCountryPageComponent },
   { path: 'by-region', component: ByRegionPageComponent },
-  { path: 'country', component: CountryPageComponent }
+  { path: ':id', component: CountryPageComponent }
 ];
