@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Country } from './interfaces/country';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, of, map } from 'rxjs';
 
 
 @Injectable({
@@ -24,6 +24,17 @@ export class CountryService {
       catchError(error => of([])) // Si hay un error se vacía el array de resultados
     );
   }
+
+  getCountryByAlphaCode( code: string ): Observable<Country | null> {
+
+    const url = `${ this.url }/alpha/${ code }`;
+  
+      return this.http.get<Country[]>( url )
+        .pipe(
+          map( countries => countries.length > 0 ? countries[0]: null ),
+          catchError( () => of(null) )
+        );
+    }
 
   async getCountriesByRegion(region : string) : Promise<Country[]> {
     const data  = await fetch(`${this.url}capital/${region}`);
