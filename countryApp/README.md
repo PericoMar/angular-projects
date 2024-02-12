@@ -1,27 +1,72 @@
 # CountryApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+Este proyecto es una aplicación web desarrollada en Angular que permite a los usuarios buscar países utilizando una API externa. La aplicación recibe inputs del usuario, como el nombre del país, y muestra los resultados correspondientes obtenidos de la API.
 
-## Development server
+# Conocimientos Adquiridos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Utilizar Angular para desarrollar aplicaciones web interactivas.
+* Comunicación entre componentes con los decoradores Input u Output.
+* Conectar una aplicación con Angular con una API.
+* Captar la información de la API tanto con Promesas como con Observables.
+* Observables: 
+    * Son la elección preferida en Angular para manejar solicitudes HTTP y eventos DOM debido a la estrecha integración con RxJS.
+    * Reactive Extensions for JavaScript (rxjs).
+* Uso de los nuevos templates de Angular 17
+    * @if @else
+    * @for
 
-## Code scaffolding
+# Angular, HttpClient y RxJS:
+En Angular, el módulo HttpClientModule proporciona un servicio HttpClient que permite realizar solicitudes HTTP a servidores remotos. Este servicio devuelve Observables en lugar de promesas al realizar solicitudes HTTP.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Importación**
 
-## Build
+```
+import { HttpClient } from '@angular/common/http';
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Inicialización**
+```
+constructor (private http : HttpClient) {};
+```
 
-## Running unit tests
+**Función donde usamos HttpClient**
+```
+getCountriesByCaptial(capital : string): Observable<Country[]> {
+    const url = `${this.url}/capital/${capital}`;
+    return this.http.get<Country[]>(url)
+    .pipe(
+      catchError(error => of([])) // Si hay un error se vacía el array de resultados
+    );
+  }
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Configuración**
+```
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 
-## Running end-to-end tests
+import { routes } from './app.routes';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideHttpClient()]
+};
+```
 
-## Further help
+**Uso**
+```
+this.countriesService.getCountriesByCaptial(this.capital).subscribe((countriesByCapital: Country[]) => {
+        this.countriesByCapital = countriesByCapital;
+      });
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+RxJS (Reactive Extensions for JavaScript) es una biblioteca para programación reactiva en JavaScript. Angular utiliza RxJS para manejar flujos de datos asincrónicos, como los eventos DOM y las solicitudes HTTP.
+
+RxJS proporciona una amplia gama de operadores que se pueden utilizar para transformar, filtrar, combinar y manipular Observables de manera funcional y declarativa. Esto significa que puedes encadenar operadores para realizar una variedad de tareas complejas de manera más limpia y concisa que utilizando enfoques imperativos tradicionales.
+
+La integración de RxJS con Angular es particularmente potente en el contexto de las solicitudes HTTP y los eventos DOM. Por ejemplo, al realizar solicitudes HTTP con HttpClient, puedes utilizar operadores como map, catchError, tap, retry, entre otros, para transformar la respuesta del servidor, manejar errores, realizar acciones secundarias, reintentar solicitudes, etc.
+
+Del mismo modo, para trabajar con eventos DOM, puedes utilizar el módulo fromEvent de RxJS para crear Observables a partir de eventos DOM como clics de ratón, cambios de valor de entrada, etc. Luego, puedes encadenar operadores para manipular y transformar estos eventos de manera reactiva.
+
+Esta integración estrecha con RxJS permite escribir código más reactivo, mantenible y eficiente en Angular, lo que lo convierte en una herramienta poderosa para construir aplicaciones web modernas y dinámicas.
+
