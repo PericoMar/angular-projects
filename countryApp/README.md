@@ -14,6 +14,10 @@ Este proyecto es una aplicación web desarrollada en Angular que permite a los u
 * Uso de los nuevos templates de Angular 17
     * @if @else
     * @for
+    * [Bucle for](https://angular.io/api/core/for)
+* Uso de Servicios / Inyectables en Angular.
+    * Función inject().
+
 
 # Angular, HttpClient y RxJS:
 En Angular, el módulo HttpClientModule proporciona un servicio HttpClient que permite realizar solicitudes HTTP a servidores remotos. Este servicio devuelve Observables en lugar de promesas al realizar solicitudes HTTP.
