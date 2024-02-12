@@ -18,6 +18,7 @@ Este proyecto es una aplicación web desarrollada en Angular que permite a los u
 # Angular, HttpClient y RxJS:
 En Angular, el módulo HttpClientModule proporciona un servicio HttpClient que permite realizar solicitudes HTTP a servidores remotos. Este servicio devuelve Observables en lugar de promesas al realizar solicitudes HTTP.
 
+
 **Importación**
 
 ```
@@ -59,6 +60,9 @@ this.countriesService.getCountriesByCaptial(this.capital).subscribe((countriesBy
         this.countriesByCapital = countriesByCapital;
       });
 ```
+
+**Documentación**
+[HttpClient](https://angular.io/api/common/http/HttpClient)
 
 RxJS (Reactive Extensions for JavaScript) es una biblioteca para programación reactiva en JavaScript. Angular utiliza RxJS para manejar flujos de datos asincrónicos, como los eventos DOM y las solicitudes HTTP.
 
