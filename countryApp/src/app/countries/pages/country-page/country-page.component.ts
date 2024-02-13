@@ -1,28 +1,38 @@
-import { Component, inject } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { CountryService } from '../../country.service';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-country-page',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './country-page.component.html',
   styles: ``
 })
 export class CountryPageComponent {
+  isLoading : boolean = true;
   country : any;
-  countriesService : CountryService = inject(CountryService);
-  constructor(private activatedRoute: ActivatedRoute, private router : Router){}
+  
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router : Router,
+    private countriesService: CountryService // Inyecta el servicio en el constructor
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params
     .pipe(
-    switchMap( ({ id }) => this.countriesService.getCountryByAlphaCode( id ))
-      )
-        .subscribe( country => {
-          if ( !country ) return this.router.navigateByUrl('');
-          return this.country = country;
-        });
+      switchMap( ({ id }) => this.countriesService.getCountryByAlphaCode(id))
+    )
+    .subscribe( country => {
+      if (!country) {
+        this.router.navigateByUrl('');
+      } else {
+        this.isLoading = false;
+        this.country = country;
+      }
+    });
   }
 }

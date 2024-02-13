@@ -12,9 +12,12 @@ export class CountryService {
 
   constructor (private http : HttpClient) {};
   
-  async getCountries(countryName : string) : Promise<Country[]> {
-    const data  = await fetch(`${this.url}name/${countryName}`);
-    return (await data.json()) ?? [];
+  getCountries(countryName : string) : Observable<Country[]> {
+    const url = `${this.url}name/${countryName}`;
+    return this.http.get<Country[]>(url)
+    .pipe(
+      catchError(error => of([])) // Si hay un error se vacía el array de resultados
+    );
   }
 
   getCountriesByCaptial(capital : string): Observable<Country[]> {
@@ -36,8 +39,11 @@ export class CountryService {
         );
     }
 
-  async getCountriesByRegion(region : string) : Promise<Country[]> {
-    const data  = await fetch(`${this.url}capital/${region}`);
-    return (await data.json()) ?? [];
+  getCountriesByRegion(region : string) : Observable<Country[]> {
+    const url = `${this.url}capital/${region}`
+    return this.http.get<Country[]>(url)
+    .pipe(
+      catchError(error => of([])) // Si hay un error se vacía el array de resultados
+    );
   }
 }

@@ -12,6 +12,7 @@ import { CountryTableComponent } from '../../components/country-table/country-ta
   styles: ``
 })
 export class ByCapitalPageComponent {
+  placeholder : string = "Introduce la capital del país que busca..."
   capital: string = '';
   countriesByCapital: Country[] = [];
   // inject crea una instancia de un servicio para poder usar sus metodos
