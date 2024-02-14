@@ -1,1 +1,8 @@
-<input type="text" [placeholder]="placeholder" class="form-control" (input)="onSearchTextChange($event)">
+<div class="row">
+  <div class="col-8"> <!-- Utiliza las clases de columna de Bootstrap según tu diseño -->
+    <input type="text" placeholder="{{ placeholder }}" class="form-control" (keydown.enter)="onNewSearch($event)" #termino>
+  </div>
+  <div class="col-4"> <!-- Utiliza las clases de columna de Bootstrap según tu diseño -->
+    <button class="btn btn-primary" (click)="onNewSearch(termino.value)">Enviar</button>
+  </div>
+</div>

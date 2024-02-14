@@ -9,9 +9,9 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class SearchBoxComponent {
   @Input() placeholder: string = 'Introduce el término de búsqueda...';
-  @Output() searchTextChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() newSearch: EventEmitter<string> = new EventEmitter<string>();
 
-  onSearchTextChange(event: any) {
-    this.searchTextChange.emit(event.target.value);
+  onNewSearch(event: any) {
+    this.newSearch.emit(event.target.value);
   }
 }
