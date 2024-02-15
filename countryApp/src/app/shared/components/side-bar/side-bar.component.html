@@ -1,7 +1,9 @@
-<nav class="d-flex flex-column justify-content-between">
-  
-
-  <ul class="nav flex-column justify-content-center d-flex align-items-center">
+<nav class="position-fixed d-flex flex-column justify-content-start">
+  <a href="" class="my-4 px-4 nav-title">
+    <img src="../../../../assets/world.svg" class="top-icon" alt="">
+    <span class="px-2 ">Paises con Angular</span>
+  </a>
+  <ul class="nav flex-column justify-content-center d-flex align-items-center my-5">
     <li class="nav-item">
       <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
     </li>
@@ -25,19 +27,18 @@
     </li>
   </ul>
 
-  <div class="d-flex justify-content-center mx-2 dropup info align-self-end">
-    <div class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="d-flex justify-content-center mx-2 dropup align-self-end mb-2 mt-auto">
+    <button class="dropdown-toggle info" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img src="../../../../assets/foto.jpg" class="img-thumbnail rounded-circle mr-2" alt="Mi foto">
       <span class="mx-2">Pedro Martínez González</span>
-    </div>
+    </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="https://github.com/PericoMar" target="_blank"><img class="icon" src="../../../../assets/Octicons-mark-github.svg" alt="">Github</a></li>
+      <li><a class="dropdown-item" href="https://www.linkedin.com/in/pedromargonz/" target="_blank"><img class="icon" src="../../../../assets/iconmonstr-linkedin-3.png" alt="">LinkedIn</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <li><a class="dropdown-item" href="#" routerLink="/contact"><img class="icon" src="../../../../assets/descarga.png" alt="">Contacto</a></li>
     </ul>
   </div>
-  
 
 </nav>
 
