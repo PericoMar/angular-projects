@@ -1,0 +1,16 @@
+img{
+    width:30%;
+    border:solid 1px black;
+    float:left;
+    shape-outside: circle();
+    margin-right: 30px;
+}
+
+.destacado{
+    color:#068181;
+    font-weight: bold;
+}
+
+.title{
+    font-size:x-large;
+}

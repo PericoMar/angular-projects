@@ -6,10 +6,15 @@ nav {
 	border-style: solid;
 /* 	border-image: linear-gradient(to bottom, #ccc, #555 66%, #181818) 1 100%; */
 	border-image: linear-gradient(to bottom, #eee, #181818, #eee) 1 100%;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* sombreado a la derecha */
 }
 
 .top-icon{
   width:40px;
+}
+
+nav a{
+  font-size: large;
 }
 
 nav a.nav-title {
@@ -23,7 +28,6 @@ nav a.nav-link{
 
 .nav-link:hover {
     color: #068181; /* Cambia el color a tu preferencia */
-    font-size: large;
     text-decoration: underline; /* Cambia el estilo de subrayado a tu preferencia */
 }
 
@@ -31,9 +35,6 @@ img{
     width : 50px;
 }
 
-.d-flex > *:not(:last-child) {
-    margin-right: 8px; /* Ajusta el valor según sea necesario */
-}
 
 .info{
   border: none;
@@ -42,10 +43,6 @@ img{
 .info:hover {
     background-color: #d3d0d0;
     border-radius: 5px; /* O cualquier valor de radio de borde que desees */
-}
-
-#dropdownProfileContainer.dropdown-menu-show .dropdown-toggle {
-  pointer-events: none;
 }
 
 .dropdown-item{
