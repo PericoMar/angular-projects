@@ -7,10 +7,6 @@ img{
   width:100%;
 }
 
-a.destacado{
-  text-decoration: none;
-}
-
 a.destacado:hover{
   text-decoration: underline;
 }
