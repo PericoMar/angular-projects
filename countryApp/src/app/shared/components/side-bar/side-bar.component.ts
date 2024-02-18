@@ -10,14 +10,16 @@ import { HostListener } from '@angular/core';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent {
-  sidebarVisible = true;
+  sidebarVisible = false;
   botonCierreSidebar = false;
 
   constructor() { }
 
   ngOnInit() {
     this.checkWidth(); // Verifica el tamaño de la ventana cuando se carga el componente
+    this.sidebarVisible = true;
   }
+
 
   @HostListener('window:resize', ['$event'])
   onResize() {
