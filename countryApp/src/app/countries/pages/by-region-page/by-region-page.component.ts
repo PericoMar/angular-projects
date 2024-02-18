@@ -13,15 +13,15 @@ import { CountryService } from '../../country.service';
 })
 export class ByRegionPageComponent {
   placeholder : string = "Introduce la región del país que busca..."
-  capital: string = '';
+  region: string = '';
   countriesByRegion: Country[] = [];
   // inject crea una instancia de un servicio para poder usar sus metodos
   countriesService: CountryService = inject(CountryService);
 
-  handleSearchTextChange(searchText: string) {
-    this.capital = searchText;
-    if (this.capital != '') {
-      this.countriesService.getCountriesByRegion(this.capital).subscribe((countriesByRegion: Country[]) => {
+  handleSearch(searchText: string) {
+    this.region = searchText;
+    if (this.region != '') {
+      this.countriesService.getCountriesByRegion(this.region).subscribe((countriesByRegion: Country[]) => {
         this.countriesByRegion = countriesByRegion;
       });
     }

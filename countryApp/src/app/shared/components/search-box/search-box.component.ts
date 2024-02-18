@@ -11,7 +11,7 @@ export class SearchBoxComponent {
   @Input() placeholder: string = 'Introduce el término de búsqueda...';
   @Output() newSearch: EventEmitter<string> = new EventEmitter<string>();
 
-  onNewSearch(event: any) {
-    this.newSearch.emit(event.target.value);
+  onNewSearch(value: string) {
+    this.newSearch.emit(value);
   }
 }
