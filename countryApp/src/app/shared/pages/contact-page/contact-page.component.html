@@ -26,6 +26,7 @@
                         Por favor, introduce un mensaje.
                     </small>
                 </div>
+                <p *ngIf="contactForm.invalid">Completa el formulario para poder enviar</p>
                 <br>
                 <button class="btn btn-success" [disabled]="!contactForm.valid">Enviar</button>
             </form>

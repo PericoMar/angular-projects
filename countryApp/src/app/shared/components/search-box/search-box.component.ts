@@ -5,7 +5,12 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './search-box.component.html',
-  styles: ``
+  styles: `.btn{
+    background-color: #2badad;
+    border-color: #2badad;
+  }
+  
+  `
 })
 export class SearchBoxComponent {
   @Input() placeholder: string = 'Introduce el término de búsqueda...';
