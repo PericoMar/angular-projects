@@ -9,7 +9,10 @@ import { CountryService } from '../../country.service';
   standalone: true,
   imports: [SearchBoxComponent, CountryTableComponent],
   templateUrl: './by-region-page.component.html',
-  styles: ``
+  styles: `.btn{
+    background-color: #2badad;
+    border-color: #2badad;
+  }`
 })
 export class ByRegionPageComponent {
   placeholder : string = "Introduce la región del país que busca..."
