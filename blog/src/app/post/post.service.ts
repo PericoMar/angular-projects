@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostService {
 
-  private apiURL = 'https://jsonplaceholder.typicode.com';
+  private apiURL = 'http://localhost:3000';
 
 // Http Header Options
 
