@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación web desarrollada en Angular que permite a los usuarios buscar países utilizando una API externa. La aplicación recibe inputs del usuario, como el nombre del país, y muestra los resultados correspondientes obtenidos de la API.
 
-# Conocimientos Adquiridos:
+## Conocimientos Adquiridos:
 
 * Utilizar Angular para desarrollar aplicaciones web interactivas.
 * Comunicación entre componentes con los decoradores Input u Output.
@@ -18,9 +18,17 @@ Este proyecto es una aplicación web desarrollada en Angular que permite a los u
 * Uso de Servicios / Inyectables en Angular.
     * Función inject().
 * Configurar y gestionar rutas primarias y anidadas con Router y routerLink
+* Uso de ReactivesFormsModule de Angular
+
+## Mejoras
+- Refactorización de codigo.
+- Contenido añadido a paginas de Inicio, Contacto y Acerca de.
+- Mejora del Frontend de la aplicación.
+- Web Responsive.
+- Formulario reactivo en la pagina de Contacto.
 
 
-# Angular, HttpClient y RxJS:
+## Angular, HttpClient y RxJS:
 En Angular, el módulo HttpClientModule proporciona un servicio HttpClient que permite realizar solicitudes HTTP a servidores remotos. Este servicio devuelve Observables en lugar de promesas al realizar solicitudes HTTP.
 
 
