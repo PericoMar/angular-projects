@@ -1,27 +1,43 @@
-# Blog
+# Proyecto CRUD de Posts en Angular con HttpClient y JSON Server
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+## Instalación
 
-## Development server
+Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clona este repositorio en tu máquina local utilizando Git:
+```
+git clone https://github.com/tu_usuario/tu_proyecto.git
+```
 
-## Code scaffolding
+2. Accede al directorio del proyecto:
+```
+cd tu_proyecto
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Instala las dependencias utilizando npm:
+```
+npm install
+```
 
-## Build
+4. Inicia el servidor JSON local y hazle watch al archivo db.json ejecutando el siguiente comando en una terminal:
+```
+json-server --watch db.json
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Este comando iniciará JSON Server y observará los cambios en el archivo db.json.
 
-## Running unit tests
+5. En otra terminal, inicia la aplicación Angular ejecutando el siguiente comando:
+```
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Descripción del Proyecto
+Este proyecto consiste en un CRUD de posts desarrollado en Angular. Utiliza HttpClient para recibir la información del servidor JSON local a través de JSON Server, lo que proporciona persistencia de datos. Se ha añadido un botón de filtrar para facilitar la búsqueda de posts en la lista.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Funcionalidades Adicionales
+Persistencia de Datos: Se utiliza JSON Server para proporcionar persistencia de datos, lo que permite crear, leer, actualizar y eliminar posts.
+Filtrar Posts: Se ha añadido un botón de filtrar para permitir a los usuarios buscar posts más fácilmente en la lista.
+Tecnologías Utilizadas
+HttpClient: Se utiliza para realizar solicitudes HTTP y recibir la información del servidor JSON.
+RouterModule: Permite conectar los diferentes componentes de la aplicación mediante enrutamiento.
+FormsModule: Se utiliza para trabajar con formularios en Angular, lo que permite la creación y actualización de posts de manera sencilla.

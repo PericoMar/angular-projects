@@ -58,5 +58,4 @@ export class ListComponent implements OnInit {
       post.body.toLowerCase().includes(searchTerm.trim().toLowerCase())
     );
   }
-
 }
