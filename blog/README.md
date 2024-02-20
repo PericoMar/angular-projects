@@ -35,13 +35,13 @@ ng serve
 Este proyecto consiste en un CRUD de posts desarrollado en Angular. Utiliza HttpClient para recibir la información del servidor JSON local a través de JSON Server, lo que proporciona persistencia de datos. Se ha añadido un botón de filtrar para facilitar la búsqueda de posts en la lista.
 
 ## Funcionalidades Adicionales
--Persistencia de Datos: Se utiliza JSON Server para proporcionar persistencia de datos, lo que permite crear, leer, actualizar y eliminar posts.
--Filtrar Posts: Se ha añadido un botón de filtrar para permitir a los usuarios buscar posts más fácilmente en la lista.
+- Persistencia de Datos: Se utiliza JSON Server para proporcionar persistencia de datos, lo que permite crear, leer, actualizar y eliminar posts.
+- Filtrar Posts: Se ha añadido un botón de filtrar para permitir a los usuarios buscar posts más fácilmente en la lista.
 
 ## Tecnologías Utilizadas
--Angular:
-    -HttpClient: Se utiliza para realizar solicitudes HTTP y recibir la información del servidor JSON.
-    -RouterModule: Permite conectar los diferentes componentes de la aplicación mediante enrutamiento.
-    -FormsModule: Se utiliza para trabajar con formularios en Angular, lo que permite la creación y actualización de posts de manera sencilla.
--Bootstrap:
-    -Frontend, componentes y clases.
+- Angular:
+    - HttpClient: Se utiliza para realizar solicitudes HTTP y recibir la información del servidor JSON.
+    - RouterModule: Permite conectar los diferentes componentes de la aplicación mediante enrutamiento.
+    - FormsModule: Se utiliza para trabajar con formularios en Angular, lo que permite la creación y actualización de posts de manera sencilla.
+- Bootstrap:
+    - Frontend, componentes y clases.
